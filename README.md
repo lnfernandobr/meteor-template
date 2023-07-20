@@ -2,6 +2,12 @@
 
 This is a Meteor template that comes with pre-configured Accounts and Routes to help you start a new project quickly.
 
+### Preview
+
+This page serves both as a sign-in and sign-up platform, designed with simplicity and functionality in mind. Feel free to customize and enhance it according to your preferences.
+(App Preview)[/public/images/page-screen.png]
+
+
 
 ### Features
 This template includes the following pre-configured routes:
@@ -38,7 +44,8 @@ If you prefer to use an external MongoDB for your project, follow these steps:
 4. Ensure you have MongoDB installed correctly on your system and accessible to the project.
 
 
-Contributing
+
+### Contributing
 We welcome contributions to enhance and improve this template. If you encounter any issues or have ideas for new features, feel free to open an issue or submit a pull request.
 
 
