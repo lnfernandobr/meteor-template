@@ -5,7 +5,8 @@ This is a Meteor template that comes with pre-configured Accounts and Routes to 
 ### Preview
 
 This page serves both as a sign-in and sign-up platform, designed with simplicity and functionality in mind. Feel free to customize and enhance it according to your preferences.
-(App Preview)[/public/images/page-screen.png]
+
+![Image Preview](public/images/page-screen.png)
 
 
 
