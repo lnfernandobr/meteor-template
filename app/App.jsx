@@ -3,12 +3,17 @@ import { UnauthenticatedLayout } from "./layouts/UnauthenticatedLayout";
 import { AuthenticatedLayout } from "./layouts/AuthenticatedLayout";
 import { AuthenticatedRoutes } from "./routes/AuthenticatedRoutes";
 import { UnauthenticatedRoutes } from "./routes/UnauthenticatedRoutes";
+import { useLoggedUser } from "./user/User";
 
 export const App = () => {
-  // TODO I need to be improved with a provider
-  const isLoggedUser = Meteor.userId();
+  const { loggedUser } = useLoggedUser();
+  const isLoggingIn = Meteor.loggingIn();
 
-  if (!isLoggedUser) {
+  if (isLoggingIn && !loggedUser) {
+    return "Checking your credentials...";
+  }
+
+  if (!loggedUser) {
     return (
       <UnauthenticatedLayout>
         <UnauthenticatedRoutes />

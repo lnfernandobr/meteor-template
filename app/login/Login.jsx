@@ -27,13 +27,6 @@ export const Login = () => {
       return;
     }
 
-    // TODO I need to create a logged User provider or use a reactive userId to prevent reload.
-    alert(
-      isRegister
-        ? "Account created with success.Reload the page"
-        : "Login with success. Reload the page",
-    );
-
     navigate(RoutePaths.ROOT);
   };
 
