@@ -3,7 +3,7 @@ import React from "react";
 export const AuthenticatedLayout = ({ children }) => {
   return (
     <div>
-      <h1>Menu</h1>
+      <h1 className="text-3xl font-bold underline">Menu</h1>
 
       <main>{children}</main>
     </div>
