@@ -1,14 +1,14 @@
-import React from "react"
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { RoutePaths } from "../routes/RoutePaths"
+import { RoutePaths } from "../routes/RoutePaths";
 
 export const NotFound = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <div>
-            <h1>This route was not found!</h1>
-            <button onClick={() => navigate(RoutePaths.ROOT)}>Go home</button>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h1>This route was not found!</h1>
+      <button onClick={() => navigate(RoutePaths.ROOT)}>Go home</button>
+    </div>
+  );
+};

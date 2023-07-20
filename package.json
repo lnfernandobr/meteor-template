@@ -8,7 +8,8 @@
   "scripts": {
     "start": "meteor run --exclude-archs web.browser.legacy,web.cordova",
     "start-with-local-mongodb": "MONGO_URL=mongodb://localhost:27017/DATABASE_NAME meteor run --exclude-archs web.browser.legacy,web.cordova",
-    "visualize": "meteor --production --extra-packages bundle-visualizer"
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "prettier": "prettier --write \"**/*.{js,jsx}\""
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",
@@ -22,5 +23,8 @@
       "client": "client/main.jsx",
       "server": "server/main.js"
     }
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
   }
 }

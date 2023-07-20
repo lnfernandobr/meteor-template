@@ -5,21 +5,20 @@ import { AuthenticatedRoutes } from "./routes/AuthenticatedRoutes";
 import { UnauthenticatedRoutes } from "./routes/UnauthenticatedRoutes";
 
 export const App = () => {
+  // TODO I need to be improved with a provider
+  const isLoggedUser = Meteor.userId();
 
-    // TODO I need to implement it
-    const isLoggedUser = true;
-
-    if (!isLoggedUser) {
-        return (
-            <UnauthenticatedLayout>
-                <UnauthenticatedRoutes />
-            </UnauthenticatedLayout>
-        )
-    }
-
+  if (!isLoggedUser) {
     return (
-        <AuthenticatedLayout>
-            <AuthenticatedRoutes />
-        </AuthenticatedLayout>
-    )
-}
+      <UnauthenticatedLayout>
+        <UnauthenticatedRoutes />
+      </UnauthenticatedLayout>
+    );
+  }
+
+  return (
+    <AuthenticatedLayout>
+      <AuthenticatedRoutes />
+    </AuthenticatedLayout>
+  );
+};

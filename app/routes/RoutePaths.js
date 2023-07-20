@@ -1,5 +1,5 @@
 export const RoutePaths = {
-    ROOT: "/",
-    LOGIN: "login",
-    TERMS: "terms"
-}
+  ROOT: "/",
+  LOGIN: "login",
+  TERMS: "terms",
+};
