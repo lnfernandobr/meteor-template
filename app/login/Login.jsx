@@ -100,8 +100,7 @@ export const Login = () => {
             onChange={onChange}
             value={form.password}
             required
-            place
-            holder="Password"
+            placeholder="Password"
           />
 
           <Button type="submit">{isLoading ? "loading..." : "Submit"}</Button>
