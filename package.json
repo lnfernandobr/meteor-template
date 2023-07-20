@@ -1,0 +1,26 @@
+{
+  "name": "meteor-template",
+  "private": false,
+  "author": {
+    "name": "Fernando Lima",
+    "email": "lnfernandobr@gmail.com"
+  },
+  "scripts": {
+    "start": "meteor run --exclude-archs web.browser.legacy,web.cordova",
+    "start-with-local-mongodb": "MONGO_URL=mongodb://localhost:27017/DATABASE_NAME meteor run --exclude-archs web.browser.legacy,web.cordova",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.20.7",
+    "meteor-node-stubs": "^1.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.jsx",
+      "server": "server/main.js"
+    }
+  }
+}
