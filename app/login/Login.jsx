@@ -34,7 +34,6 @@ export const Login = () => {
     event.preventDefault();
 
     setIsLoading(true);
-    console.log(form);
     const email = form.email.trim().toLowerCase();
 
     if (!isRegister) {
