@@ -4,10 +4,10 @@ import { AppBar } from "../components/AppBar";
 
 export const AuthenticatedLayout = ({ children }) => {
   return (
-    <div>
+    <div className="h-screen w-full flex flex-col h-screen">
       <AppBar />
 
-      <main className="p-4 mt-4">{children}</main>
+      <main className="p-4 mt-4 flex-1">{children}</main>
     </div>
   );
 };

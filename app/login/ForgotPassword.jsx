@@ -53,7 +53,7 @@ export const ForgotPassword = () => {
             onClick={() => navigate(-1)}
             className="bg-red-500  hover:bg-red-800"
           >
-            Voltar
+            Back
           </Button>
         </form>
       </div>
