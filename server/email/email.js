@@ -36,13 +36,9 @@ Meteor.startup(function () {
 });
 
 Email.customTransport = ({ to, subject, html }) => {
-  const overrideOptions = Email.overrideOptionsBeforeSend
-    ? Email.overrideOptionsBeforeSend(options)
-    : {};
   sendEmail({
     to,
     subject,
     html,
-    ...overrideOptions,
   });
 };

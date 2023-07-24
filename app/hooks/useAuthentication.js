@@ -11,6 +11,7 @@ export const useAuthentication = (authToken) => {
     try {
       await loginWithToken(authToken);
     } catch (e) {
+      // eslint-disable-next-line no-alert
       alert(
         "This link has expired but you can still access it with the Invitation Code from the email",
       );

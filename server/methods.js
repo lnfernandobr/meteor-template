@@ -2,6 +2,7 @@ import { Meteor } from "meteor/meteor";
 import { generateAuthToken } from "./accounts";
 import { RoutePaths } from "../app/routes/RoutePaths";
 import { sendEmail } from "./email/email";
+import { Accounts } from "meteor/accounts-base";
 
 Meteor.methods({
   userForgotPassword({ email }) {
@@ -19,6 +20,7 @@ Meteor.methods({
     );
 
     if (!userDb) {
+      // eslint-disable-next-line no-alert
       console.warn("User not found");
       return;
     }
@@ -27,7 +29,6 @@ Meteor.methods({
     const linkForAccessAccountsAndChangePassword = Meteor.absoluteUrl(
       `/${RoutePaths.RESET_PASSWORD}?auth_token=${tokenForAuthentication}`,
     );
-    console.log(linkForAccessAccountsAndChangePassword);
 
     sendEmail(
       {
@@ -54,7 +55,7 @@ Meteor.methods({
       {
         to: userDb.email,
         subject: "Password updated",
-        html: `<p>Your password was updated with success!`,
+        html: "<p>Your password was updated with success!",
       },
       true,
     );
