@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "../hooks/useForm";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RoutePaths } from "../routes/RoutePaths";
 import { TextField } from "../components/Textfield";
 import { Button } from "../components/Button";
@@ -94,6 +94,13 @@ export const Login = () => {
             required
             placeholder="Password"
           />
+
+          <Link
+            to={`/${RoutePaths.FORGOT_PASSWORD}`}
+            className="underline text-blue-500 cursor-pointer"
+          >
+            Forgot password
+          </Link>
 
           <Button type="submit">{isLoading ? "loading..." : "Submit"}</Button>
         </form>

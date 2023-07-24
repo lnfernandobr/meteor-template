@@ -6,13 +6,14 @@
     "email": "lnfernandobr@gmail.com"
   },
   "scripts": {
-    "start": "meteor run --exclude-archs web.browser.legacy,web.cordova",
-    "start-with-local-mongodb": "MONGO_URL=mongodb://localhost:27017/DATABASE_NAME meteor run --exclude-archs web.browser.legacy,web.cordova",
+    "start": "meteor run --settings private/env/dev/settings.json --exclude-archs web.browser.legacy,web.cordova",
+    "start-with-local-mongodb": "MONGO_URL=mongodb://localhost:27017/DATABASE_NAME meteor run --settings private/env/dev/settings.json --exclude-archs web.browser.legacy,web.cordova",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
     "prettier": "prettier --write \"**/*.{js,jsx}\""
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",
+    "@sendgrid/mail": "^7.7.0",
     "meteor-node-stubs": "^1.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
