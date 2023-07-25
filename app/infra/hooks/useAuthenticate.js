@@ -3,7 +3,7 @@ import { useGetURLParam } from "./useGetURLParam";
 import { useLoggedUser } from "../providers/user/LoggedUserProvider";
 import { useAuthentication } from "./useAuthentication";
 
-export const useTryAuthenticate = () => {
+export const useAuthenticate = () => {
   const authToken = useGetURLParam("auth_token") || null;
 
   const { loggedUser } = useLoggedUser();
