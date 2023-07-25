@@ -1,9 +1,9 @@
 import React from "react";
-import { RoutePaths } from "./RoutePaths";
-import { Login } from "../login/Login";
-import { Terms } from "../terms/Terms";
 import { Route, Routes } from "react-router-dom";
-import { ForgotPassword } from "../login/ForgotPassword";
+import { Terms } from "../../../pages/terms/Terms";
+import { RoutePaths } from "../../utils/RoutePaths";
+import { ForgotPassword } from "../../../pages/login/ForgotPassword";
+import { Login } from "../../../pages/login/Login";
 
 export const UnauthenticatedRoutes = () => {
   return (

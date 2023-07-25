@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useForm } from "../hooks/useForm";
-import { Route, useNavigate } from "react-router-dom";
-import { TextField } from "../components/Textfield";
-import { Button } from "../components/Button";
-import { methodCall } from "../utils/methodCall";
-import { Root } from "postcss";
-import { RoutePaths } from "../routes/RoutePaths";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "../../infra/hooks/useForm";
+import { methodCall } from "../../infra/utils/methodCall";
+import { RoutePaths } from "../../infra/utils/RoutePaths";
+import { TextField } from "../../atoms/Textfield";
+import { Button } from "../../atoms/Button";
 
 export const ResetPassword = () => {
   const [isLoading, setIsLoading] = useState(false);

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useForm } from "../hooks/useForm";
 import { Link, useNavigate } from "react-router-dom";
-import { RoutePaths } from "../routes/RoutePaths";
-import { TextField } from "../components/Textfield";
-import { Button } from "../components/Button";
+import { useForm } from "../../infra/hooks/useForm";
+import { RoutePaths } from "../../infra/utils/RoutePaths";
+import { TextField } from "../../atoms/Textfield";
+import { Button } from "../../atoms/Button";
 
 export const Login = () => {
   const [isRegister, setIsRegister] = useState(false);

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { useForm } from "../hooks/useForm";
 import { useNavigate } from "react-router-dom";
-import { TextField } from "../components/Textfield";
-import { Button } from "../components/Button";
-import { methodCall } from "../utils/methodCall";
+import { useForm } from "../../infra/hooks/useForm";
+import { methodCall } from "../../infra/utils/methodCall";
+import { TextField } from "../../atoms/Textfield";
+import { Button } from "../../atoms/Button";
 
 export const ForgotPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-
   const { form, onChange, setForm } = useForm({ email: "" });
 
   const onSubmi = (event) => {
@@ -18,9 +17,10 @@ export const ForgotPassword = () => {
     const email = form.email.trim().toLowerCase();
 
     try {
-      methodCall("userForgotPassword", { email });
-      alert(`We sent an email to ${email}. Check your spam as well`);
-      setForm({ email: "" });
+      methodCall("userForgotPassword", { email }).then(() => {
+        alert(`We sent an email to ${email}. Check your spam as well`);
+        setForm({ email: "" });
+      });
     } catch (error) {
       console.error(error);
     } finally {

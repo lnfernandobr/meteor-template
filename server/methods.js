@@ -1,8 +1,8 @@
-import { Meteor } from 'meteor/meteor';
-import { generateAuthToken } from './accounts';
-import { RoutePaths } from '../app/routes/RoutePaths';
-import { sendEmail } from './email/email';
-import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from "meteor/meteor";
+import { generateAuthToken } from "./accounts";
+import { Accounts } from "meteor/accounts-base";
+import { RoutePaths } from "../app/infra/utils/RoutePaths";
+import { sendEmail } from "./email";
 
 Meteor.methods({
   userForgotPassword({ email }) {
@@ -11,32 +11,32 @@ Meteor.methods({
       return;
     }
     if (!email) {
-      throw new Error('email is required');
+      throw new Error("email is required");
     }
 
     const userDb = Meteor.users.findOne(
       { email },
-      { fields: { _id: 1, email: 1 } }
+      { fields: { _id: 1, email: 1 } },
     );
 
     if (!userDb) {
       // eslint-disable-next-line no-console
-      console.warn('User not found');
+      console.warn("User not found");
       return;
     }
 
     const tokenForAuthentication = generateAuthToken(userDb);
     const linkForAccessAccountsAndChangePassword = Meteor.absoluteUrl(
-      `/${RoutePaths.RESET_PASSWORD}?auth_token=${tokenForAuthentication}`
+      `/${RoutePaths.RESET_PASSWORD}?auth_token=${tokenForAuthentication}`,
     );
 
     sendEmail(
       {
         to: userDb.email,
-        subject: 'Reset password',
+        subject: "Reset password",
         html: `<p>You can update your password here: ${linkForAccessAccountsAndChangePassword}`,
       },
-      true
+      true,
     );
   },
 
@@ -54,10 +54,10 @@ Meteor.methods({
     sendEmail(
       {
         to: userDb.email,
-        subject: 'Password updated',
-        html: '<p>Your password was updated with success!',
+        subject: "Password updated",
+        html: "<p>Your password was updated with success!",
       },
-      true
+      true,
     );
   },
 });

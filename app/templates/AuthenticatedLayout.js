@@ -1,10 +1,9 @@
 import React from "react";
-import { logout } from "../login/logout";
-import { AppBar } from "../components/AppBar";
+import { AppBar } from "../molecules/AppBar";
 
 export const AuthenticatedLayout = ({ children }) => {
   return (
-    <div className="h-screen w-full flex flex-col h-screen">
+    <div className="h-screen w-full flex flex-col">
       <AppBar />
 
       <main className="p-4 mt-4 flex-1">{children}</main>

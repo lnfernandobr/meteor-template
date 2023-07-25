@@ -1,10 +1,10 @@
 import React from "react";
-import { RoutePaths } from "./RoutePaths";
-import { Home } from "../home/Home";
 import { Route, Routes } from "react-router-dom";
-import { NotFound } from "../components/NotFound";
-import { Terms } from "../terms/Terms";
-import { ResetPassword } from "../login/ResetPassword";
+import { RoutePaths } from "../../utils/RoutePaths";
+import { Home } from "../../../pages/home/Home";
+import { Terms } from "../../../pages/terms/Terms";
+import { ResetPassword } from "../../../pages/login/ResetPassword";
+import { NotFound } from "../../../pages/notFound/NotFound";
 
 export const AuthenticatedRoutes = () => {
   return (

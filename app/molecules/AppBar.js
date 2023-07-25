@@ -1,7 +1,7 @@
 import React from "react";
-import { logout } from "../login/logout";
 import { Link } from "react-router-dom";
-import { RoutePaths } from "../routes/RoutePaths";
+import { RoutePaths } from "../infra/utils/RoutePaths";
+import { logout } from "../infra/utils/logout";
 
 export const AppBar = () => {
   return (
