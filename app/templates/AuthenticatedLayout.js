@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar } from "../molecules/AppBar";
+import { AppBar } from "../organisms/AppBar";
 
 export const AuthenticatedLayout = ({ children }) => {
   return (
