@@ -1,5 +1,6 @@
 accounts-base@2.2.8
 accounts-password@2.3.4
+accounts-passwordless@2.1.3
 allow-deny@1.1.1
 autoupdate@1.8.0
 babel-compiler@7.10.4

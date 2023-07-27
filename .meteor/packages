@@ -24,3 +24,4 @@ react-meteor-data       # React higher-order component for reactively tracking M
 # Added packages
 accounts-base
 accounts-password
+accounts-passwordless
