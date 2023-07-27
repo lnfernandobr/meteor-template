@@ -1,110 +1,86 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
 import { useForm } from "../../infra/hooks/useForm";
-import { RoutePaths } from "../../infra/utils/RoutePaths";
-import { TextField } from "../../atoms/Textfield";
-import { Button } from "../../atoms/Button";
+
+import {
+  Button,
+  FormControl,
+  Flex,
+  Heading,
+  Input,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 export const Login = () => {
-  const [isRegister, setIsRegister] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
-
-  const { form, onChange } = useForm({ name: "", email: "", password: "" });
-
-  const handleLogin = (error) => {
-    setIsLoading(false);
-    if (error) {
-      if (error.error === 403) {
-        alert(
-          isRegister
-            ? "This account already exists"
-            : "The password or email are incorrects",
-        );
-        return;
-      }
-      alert("Something unexpected happend");
-      return;
-    }
-
-    navigate(RoutePaths.ROOT);
+  const initialState = {
+    email: "",
   };
 
-  const onSubmi = (event) => {
+  const { form, onChange, setForm } = useForm(initialState);
+
+  const onSubmit = (event) => {
     event.preventDefault();
 
-    setIsLoading(true);
-    const email = form.email.trim().toLowerCase();
-
-    if (!isRegister) {
-      Meteor.loginWithPassword({ email }, form.password, handleLogin);
-    } else {
-      Accounts.createUser(
-        {
-          email,
-          username: email,
-          password: form.password,
-          name: form.name,
-        },
-        handleLogin,
-      );
-    }
-
-    setIsLoading(false);
+    // TODO handle it here
+    console.log(form);
+    setForm(initialState);
   };
 
   return (
-    <div className="w-full h-screen flex flex-col">
-      <div className="flex justify-end w-full border-1">
-        <button
-          type="button"
-          onClick={() => setIsRegister(!isRegister)}
-          className="underline text-blue-500 text-start m-4"
+    <form onSubmit={onSubmit}>
+      <Flex
+        minH="100vh"
+        align="center"
+        justify="center"
+        component="form"
+        onSubmit={onSubmit}
+        bg={useColorModeValue("gray.50", "gray.800")}
+      >
+        <Stack
+          spacing={4}
+          w={"full"}
+          maxW={"md"}
+          bg={useColorModeValue("white", "gray.700")}
+          rounded={"xl"}
+          boxShadow={"lg"}
+          p={6}
+          my={12}
         >
-          {isRegister ? "I want to login" : "I want to create a new account"}
-        </button>
-      </div>
-
-      <div className="flex justify-center items-center flex-col h-screen">
-        <h1 className="text-3xl mb-4 text-gray-600">Your app</h1>
-        <form onSubmit={onSubmi} className="flex flex-col w-1/3 gap-2 ">
-          {isRegister && (
-            <TextField
-              type="text"
-              name="name"
-              onChange={onChange}
-              value={form.name}
-              required
-              placeholder="Name"
-            />
-          )}
-          <TextField
-            type="email"
-            name="email"
-            onChange={onChange}
-            value={form.email}
-            required
-            placeholder="Email"
-          />
-          <TextField
-            type="password"
-            name="password"
-            onChange={onChange}
-            value={form.password}
-            required
-            placeholder="Password"
-          />
-
-          <Link
-            to={`/${RoutePaths.FORGOT_PASSWORD}`}
-            className="underline text-blue-500 cursor-pointer"
+          <Heading lineHeight={1.1} fontSize={{ base: "2xl", md: "3xl" }}>
+            Login with only email
+          </Heading>
+          <Text
+            fontSize={{ base: "sm", sm: "md" }}
+            color={useColorModeValue("gray.800", "gray.400")}
           >
-            Forgot password
-          </Link>
-
-          <Button type="submit">{isLoading ? "loading..." : "Submit"}</Button>
-        </form>
-      </div>
-    </div>
+            We&apos;ll send a code to your email to you log-in
+          </Text>
+          <FormControl id="email" onSubmit={onSubmit}>
+            <Input
+              placeholder="your-email@example.com"
+              _placeholder={{ color: "gray.500" }}
+              onChange={onChange}
+              required
+              name="email"
+              value={form.email}
+              type="email"
+            />
+          </FormControl>
+          <Stack spacing={6}>
+            <Button
+              bg="blue.400"
+              color="white"
+              type="submit"
+              _hover={{
+                bg: "blue.500",
+              }}
+            >
+              Request code
+            </Button>
+          </Stack>
+        </Stack>
+      </Flex>
+    </form>
   );
 };
