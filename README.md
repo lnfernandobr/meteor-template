@@ -29,9 +29,10 @@ To explore the capabilities of Chakra UI and see a live demo, you can visit the 
 
 ### Preview
 
-<img alt="Preview image 1" style="max-width: 400px; max-height:400px;" src="public/images/img1.png" />
-<img alt="Preview image 1" style="max-width: 400px; max-height:400px;" src="public/images/img3.png" />
-<img alt="Preview image 1" style="max-width: 400px; max-height:400px;" src="public/images/img2.png" />
+![Preview image 2](public/images/img1.png)
+![Preview image 2](public/images/img2.png)
+![Preview image 3](public/images/img3.png)
+
 
 ### How to Start
 
