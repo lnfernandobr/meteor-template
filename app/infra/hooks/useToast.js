@@ -6,7 +6,7 @@ export const useToast = () => {
     title,
     description,
     status = "success",
-    duration = 9000,
+    duration = 3000,
     isClosable = true,
     ...rest
   }) => toast({ title, description, status, duration, isClosable, ...rest });

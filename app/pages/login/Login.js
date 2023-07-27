@@ -129,6 +129,7 @@ export const Login = ({}) => {
       <Flex
         minH="100vh"
         align="center"
+        padding={4}
         justify="center"
         component="form"
         onSubmit={onSubmit}
