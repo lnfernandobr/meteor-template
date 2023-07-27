@@ -1,2 +1,2 @@
-import "./accounts";
-import "./methods";
+import "./methods/loadMethods";
+import "./accounts/accounts";
