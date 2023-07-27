@@ -1,17 +1,14 @@
 # Meteor Template
 
-Designed with simplicity and functionality in mind, this template provides a user-friendly sign-in and sign-up platform. Thanks to the integration of Tailwind CSS, you have complete control over the visual design, making it effortless to customize the application according to your preferences.
-
-
-### Preview
-![Image Preview](public/images/screen.png)
+Designed with simplicity and functionality in mind, this template provides a user-friendly sign-in and sign-up platform. Thanks to the integration of Chakra UI, you have complete control over the visual design, making it effortless to customize the application according to your preferences.
 
 
 
-Why Choose Meteor QuickStart?
+
+### Why Choose Meteor QuickStart?
 1. Effortless Setup: Say goodbye to time-consuming initial configurations. With pre-configured Accounts and Routes, you can start working on your app's core functionality from day one.
 
-2. Tailwind CSS Integration: Unlock the true potential of Tailwind CSS, a highly customizable and responsive CSS framework. Tailwind CSS empowers you to effortlessly style your application, ensuring it looks stunning on any device.
+2. Chakra UI Integration: Unlock the true potential of Chakra UI, a highly customizable and accessible component library for React. Chakra UI empowers you to effortlessly style your application, ensuring it looks stunning on any device while providing an excellent user experience.
 
 3. Complete Accounts System: Managing user authentication has never been easier. Our template comes with a robust user authentication system, allowing you to handle user registrations, logins, password resets, and more, with ease and security.
 
@@ -25,6 +22,10 @@ Why Choose Meteor QuickStart?
 
 8. Authenticated and Unauthenticated Routes: Create a smooth and personalized user experience with separate routes for authenticated and unauthenticated users.
 
+### Chakra UI
+To explore the capabilities of Chakra UI and see a live demo, you can visit the official Chakra UI website
+* Chakra UI - https://chakra-ui.com/
+* Chakra template for free - https://chakra-templates.dev/
 
 ### How to Start
 
