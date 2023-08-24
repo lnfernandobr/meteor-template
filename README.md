@@ -66,6 +66,11 @@ If you prefer to use an external MongoDB for your project, follow these steps:
 3. Replace `DATABASE_NAME` with the name of your MongoDB database.
 4. Ensure you have MongoDB installed correctly on your system and accessible to the project.
 
+### Commit Message Convention and Hooks
+We follow a commit message convention to maintain a standardized format for commit messages. 
+We use commit-lint and husky to enforce this convention and prevent commits that don't adhere to it.
+
+
 ### Contributing
 
 We welcome contributions to enhance and improve this template. If you encounter any issues or have ideas for new features, feel free to open an issue or submit a pull request.
