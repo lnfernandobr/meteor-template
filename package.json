@@ -9,7 +9,7 @@
     "start": "meteor run --settings private/env/dev/settings.json --exclude-archs web.browser.legacy,web.cordova",
     "start-with-local-mongodb": "MONGO_URL=mongodb://localhost:27017/DATABASE_NAME meteor run --settings private/env/dev/settings.json --exclude-archs web.browser.legacy,web.cordova",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "prettier": "prettier --write \"**/*.{js,jsx}\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint . --fix"
   },
   "dependencies": {
@@ -36,9 +36,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {
-    "*.{js,jsx,json}": ["prettier --write", "eslint --fix", "git add"]
-  },
   "eslintConfig": {
     "extends": [
       "@quave/quave"
@@ -50,6 +47,7 @@
     "@quave/eslint-config-quave": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.0"
   }
 }
