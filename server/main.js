@@ -1,2 +1,3 @@
-import "./methods/loadMethods";
-import "./accounts/accounts";
+import './methods/loadMethods';
+import './accounts/accounts';
+import './graphql/main';
