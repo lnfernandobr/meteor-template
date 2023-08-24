@@ -1,4 +1,5 @@
 {
+    "environment": "DEVELOPMENT",
     "sendGrid": {
         "SENDGRID_API_KEY": ""
     }

@@ -1,14 +1,17 @@
 import React from 'react';
 import { App } from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { LoggedUserProvider } from './infra/providers/user/LoggedUserProvider';
+import { LoggedUserProvider } from './infra/user/LoggedUserProvider';
 import { ChakraProvider } from '@chakra-ui/react';
-import { ApolloProvider } from '@apollo/client';
-import ApolloClient from 'apollo-boost';
 import { Accounts } from 'meteor/accounts-base';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
   uri: '/graphql',
+  cache: new InMemoryCache(),
+  headers: {
+    authorization: Accounts._storedLoginToken(),
+  },
   request: (operation) =>
     operation.setContext(() => ({
       headers: {
@@ -18,13 +21,13 @@ const client = new ApolloClient({
 });
 
 export const AppContainer = () => (
-    <BrowserRouter>
-      <LoggedUserProvider>
-        <ChakraProvider>
-          <ApolloProvider client={client}>
-            <App />
-          </ApolloProvider>
-        </ChakraProvider>
-      </LoggedUserProvider>
-    </BrowserRouter>
-  );
+  <BrowserRouter>
+    <ChakraProvider>
+      <ApolloProvider client={client}>
+        <LoggedUserProvider>
+          <App />
+        </LoggedUserProvider>
+      </ApolloProvider>
+    </ChakraProvider>
+  </BrowserRouter>
+);

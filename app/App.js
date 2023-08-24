@@ -1,28 +1,25 @@
-import React from "react";
-import { useAuthenticate } from "./infra/hooks/useAuthenticate";
-import { UnauthenticatedLayout } from "./templates/UnauthenticatedLayout";
-import { UnauthenticatedRoutes } from "./infra/providers/route/UnauthenticatedRoutes";
-import { AuthenticatedLayout } from "./templates/AuthenticatedLayout";
-import { AuthenticatedRoutes } from "./infra/providers/route/AuthenticatedRoutes";
+import React from 'react';
+import { AuthenticatedRoutes } from './pages/AuthenticatedRoutes';
+import { useLoggedUser } from './infra/user/LoggedUserProvider';
+import { loadDevMessages, loadErrorMessages } from '@apollo/client/dev';
+import { Environments } from './infra/utils/Environments';
+import { UnauthenticatedRoutes } from './pages/UnauthenticatedRoutes';
+
+if (Environments.isDevelopment) {
+  loadDevMessages();
+  loadErrorMessages();
+}
 
 export const App = () => {
-  const { loggedUser, isLoading } = useAuthenticate();
+  const { loggedUser, loading: isLoading } = useLoggedUser();
 
   if (isLoading) {
-    return "Checking your credentials...";
+    return 'Checking your credentials...';
   }
 
   if (!loggedUser) {
-    return (
-      <UnauthenticatedLayout>
-        <UnauthenticatedRoutes />
-      </UnauthenticatedLayout>
-    );
+    return <UnauthenticatedRoutes />;
   }
 
-  return (
-    <AuthenticatedLayout>
-      <AuthenticatedRoutes />
-    </AuthenticatedLayout>
-  );
+  return <AuthenticatedRoutes />;
 };
