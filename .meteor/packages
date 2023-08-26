@@ -23,7 +23,10 @@ react-meteor-data       # React higher-order component for reactively tracking M
 
 # Added packages
 accounts-base
-accounts-password@2.3.4
-accounts-passwordless@2.1.3
 swydo:graphql
-apollo
+accounts-google
+service-configuration
+swydo:ddp-apollo
+quave:collections
+aldeed:collection2
+quave:logs

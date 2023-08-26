@@ -19,16 +19,19 @@
     "@chakra-ui/react": "^2.8.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@graphql-tools/schema": "^10.0.0",
     "@sendgrid/mail": "^7.7.0",
-    "apollo-boost": "^0.4.9",
-    "apollo-server-express": "^3.12.0",
+    "@swydo/apollo-link-ddp": "^4.0.2",
     "express": "^4.18.2",
     "framer-motion": "^10.13.2",
     "graphql": "^16.8.0",
     "meteor-node-stubs": "^1.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.2"
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^6.14.2",
+    "simpl-schema": "^3.4.1",
+    "winston-loggly-bulk": "^3.2.1"
   },
   "meteor": {
     "mainModule": {

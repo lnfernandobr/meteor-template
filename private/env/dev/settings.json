@@ -1,4 +1,19 @@
 {
+    "public": {
+        "ROOT_URL": "http://localhost:3000",
+        "packages": {
+            "quave:logs": {
+                "sendToServer": [
+                    "error",
+                    "warn"
+                ],
+                "loggly": {
+                    "token": "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+                    "subdomain": "yourdomain"
+                }
+            }
+        }
+    },
     "environment": "DEVELOPMENT",
     "sendGrid": {
         "SENDGRID_API_KEY": ""
