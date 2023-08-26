@@ -39,11 +39,6 @@
       "server": "server/main.js"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "eslintConfig": {
     "extends": [
       "@quave/quave"
