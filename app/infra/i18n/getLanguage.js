@@ -1,3 +1,3 @@
 export const getLanguage = () => {
-  return navigator.languages?.[0] || navigator.language || "en";
+  return "pt-BR" || navigator.languages?.[0] || navigator.language || "en";
 };

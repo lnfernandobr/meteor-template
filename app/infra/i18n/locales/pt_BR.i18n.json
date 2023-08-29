@@ -4,5 +4,8 @@
   "policies": "Termos e politica de privacidade",
   "loginWithGooogleButton": "Continuar com o Google",
   "hello": "Olá!",
-  "unexpectedLoginError": "Um erro inesperado aconteceu, tente novamente fazer o login."
+  "unexpectedLoginError": "Um erro inesperado aconteceu, tente novamente fazer o login.",
+  "home": "Inicio",
+  "profile": "Perfil",
+  "logout": "Sair"
 }

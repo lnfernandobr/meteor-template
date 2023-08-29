@@ -1,6 +1,6 @@
 // imports/i18n/i18n.tsx
 import { i18n } from "meteor/universe:i18n";
-import React, { createContext, useCallback, useContext } from "react";
+import { createContext, useCallback, useContext } from "react";
 
 const localeContext = createContext(i18n.getLocale());
 

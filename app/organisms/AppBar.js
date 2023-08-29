@@ -19,8 +19,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { logout } from "../infra/utils/logout";
 import { RoutePaths } from "../infra/utils/RoutePaths";
 import { useNavigate, Link } from "react-router-dom";
-
-const Links = [{ name: "Home", to: RoutePaths.ROOT }];
+import { useTranslator } from "../infra/hooks/useTranslator";
 
 const NavLink = ({ children, to }) => {
   return (
@@ -41,6 +40,10 @@ const NavLink = ({ children, to }) => {
 export const AppBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
+
+  const t = useTranslator();
+
+  const Links = [{ name: t("home"), to: RoutePaths.ROOT }];
 
   return (
     <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -77,10 +80,10 @@ export const AppBar = () => {
 
             <MenuList>
               <MenuItem onClick={() => navigate(`/${RoutePaths.PROFILE}`)}>
-                Profile
+                {t("profile")}
               </MenuItem>
               <MenuDivider />
-              <MenuItem onClick={logout}>Logout</MenuItem>
+              <MenuItem onClick={logout}>{t("logout")}</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
