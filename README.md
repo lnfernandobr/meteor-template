@@ -25,14 +25,16 @@ To explore the capabilities of Chakra UI and see a live demo, you can visit the 
 
 ![Preview image 2](public/images/img2.png)
 
-
 ### GraphQL Integration with DDP Protocol
+
 Harness the power of GraphQL by integrating it with the DDP protocol in Meteor. This combination offers efficient data transfer and real-time updates, optimizing the performance of your application.
 
 ### Multi-Language Internationalization
+
 Extend the reach of your application by implementing multi-language support. Users can enjoy a personalized experience by choosing their preferred language for the application interface.
 
 ### Google Login Integration
+
 Enhance user accessibility by providing a Google login option. Users can conveniently log in using their Google accounts, streamlining the authentication process.
 
 ### How to Start
@@ -45,6 +47,7 @@ meteor npm install
 ```
 
 ### Working with Environment Variables
+
 To ensure the security of sensitive information and provide flexibility in different deployment scenarios, this extended Meteor template employs environment variables. Follow these steps to configure and manage environment variables effectively:
 
 1. Locate the `example.settings.json` file in the `/private/env/dev/` directory of your project.
@@ -59,7 +62,9 @@ For example, if your settings.json file initially looks like this:
   "mongoURL": "YOUR_MONGODB_URL"
 }
 ```
+
 Replace **"YOUR_SENDGRID_API_KEY"** with your actual SendGrid API key and **"YOUR_MONGODB_URL"** with your MongoDB URL.
+
 ```json
 {
   "sendgridAPIKey": "actual_sendgrid_api_key_here",
@@ -91,12 +96,10 @@ If you prefer to use an external MongoDB for your project, follow these steps:
 4. Ensure you have MongoDB installed correctly on your system and accessible to the project.
 
 ### Commit Message Convention and Hooks
-We follow a commit message convention to maintain a standardized format for commit messages. 
-We use commit-lint and husky to enforce this convention and prevent commits that don't adhere to it.
 
+We follow a commit message convention to maintain a standardized format for commit messages.
+We use commit-lint and husky to enforce this convention and prevent commits that don't adhere to it.
 
 ### Contributing
 
 We welcome contributions to enhance and improve this template. If you encounter any issues or have ideas for new features, feel free to open an issue or submit a pull request.
-
-Kickstart your Meteor projects with confidence using this template. With Tailwind CSS, a comprehensive Accounts system, and pre-configured Routes, you can focus on building your application's unique features while enjoying the convenience and power of Meteor. Happy coding!
