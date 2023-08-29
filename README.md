@@ -5,20 +5,14 @@ Designed with simplicity and functionality in mind, this template provides a use
 ### Why Choose Meteor QuickStart?
 
 1. Effortless Setup: Say goodbye to time-consuming initial configurations. With pre-configured Accounts and Routes, you can start working on your app's core functionality from day one.
-
 2. Chakra UI Integration: Unlock the true potential of Chakra UI, a highly customizable and accessible component library for React. Chakra UI empowers you to effortlessly style your application, ensuring it looks stunning on any device while providing an excellent user experience.
-
-3. Complete Accounts System: Managing user authentication has never been easier. Our template comes with a robust user authentication system, allowing you to handle user registrations, logins, password resets, and more, with ease and security.
-
-4. Email Sending with SendGrid: Communicate effectively with your users through email notifications, password reset links, and more, using the seamless integration of SendGrid.
-
-5. Token-Based Login: Offer your users a convenient and secure method of logging in with token-based authentication.
-
-6. Meteor Methods for Password Management: Simplify password-related tasks with two Meteor methods dedicated to updating passwords and sending password reset tokens.
-
-7. Environment Variables with settings.json: Safeguard sensitive information using a settings.json file for your environment variables.
-
-8. Authenticated and Unauthenticated Routes: Create a smooth and personalized user experience with separate routes for authenticated and unauthenticated users.
+3. Email Sending with SendGrid: Communicate effectively with your users through email notifications, password reset links, and more, using the seamless integration of SendGrid.
+4. Environment Variables with settings.json: Safeguard sensitive information using a settings.json file for your environment variables.
+5. Authenticated and Unauthenticated Routes: Create a smooth and personalized user experience with separate routes for authenticated and unauthenticated users.
+6. GraphQL Integration with DDP Protocol: Harness the power of GraphQL integration through the DDP (Distributed Data Protocol) to efficiently manage data queries and mutations, optimizing your application's performance.
+7. Multi-Language Internationalization: Reach a broader audience by implementing multi-language support, allowing users to experience your application in their preferred language.
+8. Google Login Integration: Provide users with a convenient login option using their Google accounts, enhancing accessibility and user satisfaction.
+9. Authenticated Routes with GraphQL: Elevate your application by combining authenticated routes with GraphQL, enabling users to interact with personalized data and features securely.
 
 ### Chakra UI
 
@@ -29,10 +23,17 @@ To explore the capabilities of Chakra UI and see a live demo, you can visit the 
 
 ### Preview
 
-![Preview image 2](public/images/img1.png)
 ![Preview image 2](public/images/img2.png)
-![Preview image 3](public/images/img3.png)
 
+
+### GraphQL Integration with DDP Protocol
+Harness the power of GraphQL by integrating it with the DDP protocol in Meteor. This combination offers efficient data transfer and real-time updates, optimizing the performance of your application.
+
+### Multi-Language Internationalization
+Extend the reach of your application by implementing multi-language support. Users can enjoy a personalized experience by choosing their preferred language for the application interface.
+
+### Google Login Integration
+Enhance user accessibility by providing a Google login option. Users can conveniently log in using their Google accounts, streamlining the authentication process.
 
 ### How to Start
 
@@ -41,6 +42,29 @@ To explore the capabilities of Chakra UI and see a live demo, you can visit the 
 
 ```bash
 meteor npm install
+```
+
+### Working with Environment Variables
+To ensure the security of sensitive information and provide flexibility in different deployment scenarios, this extended Meteor template employs environment variables. Follow these steps to configure and manage environment variables effectively:
+
+1. Locate the `example.settings.json` file in the `/private/env/dev/` directory of your project.
+2. Duplicate the `example.settings.json` file and rename the duplicate as `settings.json`. This file will store your actual environment variables.
+3. Open the `settings.json` file and replace each placeholder variable with its corresponding value. This ensures that your application can access the necessary configuration information.
+
+For example, if your settings.json file initially looks like this:
+
+```json
+{
+  "sendgridAPIKey": "YOUR_SENDGRID_API_KEY",
+  "mongoURL": "YOUR_MONGODB_URL"
+}
+```
+Replace **"YOUR_SENDGRID_API_KEY"** with your actual SendGrid API key and **"YOUR_MONGODB_URL"** with your MongoDB URL.
+```json
+{
+  "sendgridAPIKey": "actual_sendgrid_api_key_here",
+  "mongoURL": "actual_mongodb_url_here"
+}
 ```
 
 3. Start the project:
