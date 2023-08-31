@@ -6,6 +6,15 @@ export const UserSchema = new SimpleSchema({
   },
   name: {
     type: String,
+    optional: true,
+  },
+  picture: {
+    type: String,
+    optional: true,
+  },
+  auth: {
+    type: Object,
+    blackbox: true,
   },
   email: {
     type: String,
@@ -13,8 +22,8 @@ export const UserSchema = new SimpleSchema({
   createdAt: Date,
   updatedAt: Date,
   emails: { type: Array, optional: true },
-  'emails.$': Object,
-  'emails.$.address': String,
-  'emails.$.verified': Boolean,
+  "emails.$": Object,
+  "emails.$.address": String,
+  "emails.$.verified": Boolean,
   services: { type: Object, blackbox: true },
 });

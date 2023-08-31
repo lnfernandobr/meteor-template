@@ -20,6 +20,8 @@ Accounts.onCreateUser((user, originalUser) => ({
   ...originalUser,
   email: originalUser.services.google.email,
   picture: originalUser.services.google.picture,
+  createdAt: new Date(),
+  updatedAt: new Date(),
   auth: {
     accessToken: originalUser.services.google.accessToken,
   },
