@@ -1,10 +1,10 @@
 import React from "react";
-import { AuthenticatedRoutes } from "./pages/AuthenticatedRoutes";
-import { useLoggedUser } from "./infra/user/LoggedUserProvider";
+import { AuthenticatedRoutes } from "../pages/AuthenticatedRoutes";
+import { useLoggedUser } from "../infra/user/LoggedUserProvider";
 import { loadDevMessages, loadErrorMessages } from "@apollo/client/dev";
-import { Environments } from "./infra/utils/Environments";
-import { UnauthenticatedRoutes } from "./pages/UnauthenticatedRoutes";
-import { Loading } from "./atoms/Loading";
+import { Environments } from "../infra/utils/Environments";
+import { UnauthenticatedRoutes } from "../pages/UnauthenticatedRoutes";
+import { Loading } from "../atoms/Loading";
 
 if (Environments.isDevelopment) {
   loadDevMessages();
